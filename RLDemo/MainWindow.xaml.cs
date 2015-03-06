@@ -23,6 +23,19 @@ namespace RLDemo
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = App.Controller;
+        }
+
+        private void results_click(object sender, RoutedEventArgs e)
+        {
+            var selectedPerson = _peopleBox.SelectedItem;
+
+            if(selectedPerson != null && typeof(BusinessObjects.Person).IsAssignableFrom(selectedPerson.GetType()))
+            {
+                UI.PersonDetails pd = new UI.PersonDetails((BusinessObjects.Person)selectedPerson);
+                pd.ShowDialog();
+            }
         }
     }
 }

@@ -1,1 +1,25 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RLDB">
+  <DataContextMoniker Name="/RLDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="99cd1003-217d-4724-8adf-71199307f54e" absoluteBounds="1.5, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/RLDBDataContext/People" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0447f7ec-cda5-44c8-b9f8-9f5cc0e3e142" absoluteBounds="1.5150000000000001, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35addc76-b56d-481a-835b-8532779db788" absoluteBounds="1.5, 3.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RLDBDataContext/Result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="400a5205-5e1b-4f2b-8c88-51e8dd44aa5a" absoluteBounds="1.5150000000000001, 3.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.1362939453125); (2.5 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RLDBDataContext/People/People_Result" />
+      <nodes>
+        <classShapeMoniker Id="99cd1003-217d-4724-8adf-71199307f54e" />
+        <classShapeMoniker Id="35addc76-b56d-481a-835b-8532779db788" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

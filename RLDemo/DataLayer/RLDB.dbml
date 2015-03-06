@@ -1,1 +1,20 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RanglistenDB" Class="RLDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\FileDatabase\RanglistenDB.mdf;Integrated Security=True" SettingsObjectName="RLDemo.Properties.Settings" SettingsPropertyName="RanglistenDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.People" Member="Peoples">
+    <Type Name="People">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="People_Result" Member="Results" ThisKey="Id" OtherKey="PersonId" Type="Result" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Results" Member="Results">
+    <Type Name="Result">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discipline" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mark" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="People_Result" Member="People" ThisKey="PersonId" OtherKey="Id" Type="People" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

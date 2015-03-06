@@ -13,5 +13,26 @@ namespace RLDemo
     /// </summary>
     public partial class App : Application
     {
+        private static BusinessObjects.RLController _controller;
+
+        public App()
+        {
+
+        }
+
+        public static BusinessObjects.RLController Controller
+        {
+            get
+            {
+                if (_controller == null)
+                {
+                    _controller = new BusinessObjects.RLController(
+                        new DataLayer.RLDBDataContext()
+                      );
+                }
+                return _controller;
+            }
+        }
+
     }
 }
