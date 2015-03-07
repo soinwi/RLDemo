@@ -72,6 +72,9 @@
     <Compile Include="UI\PersonDetails.xaml.cs">
       <DependentUpon>PersonDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\ResultDialog.xaml.cs">
+      <DependentUpon>ResultDialog.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\PersonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ResultDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,10 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FileDatabase\RanglistenDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="FileDatabase\RanglistenDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RanglistenDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

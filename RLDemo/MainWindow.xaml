@@ -7,7 +7,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListBox Name="_peopleBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ItemsSource="{Binding Path=People}" Margin="42,274,-42,-254" Grid.RowSpan="2"/>
+        <ListBox Name="_peopleBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ItemsSource="{Binding Path=People}" />
         <Grid Grid.Row="1">
             <Button Click="results_click">Results</Button>
         </Grid>

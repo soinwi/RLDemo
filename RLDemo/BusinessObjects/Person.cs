@@ -7,12 +7,23 @@ using System.Collections.ObjectModel;
 
 namespace RLDemo.BusinessObjects
 {
-    public class Person
+    public class Person: System.ComponentModel.INotifyPropertyChanged
     {
         private DataLayer.People _person;
+        
+
         public Person(DataLayer.People person_)
         {
+            
             _person = person_;
+        }
+
+        public int Id
+        {
+            get
+            {
+                return _person.Id;
+            }
         }
 
         public string Name
@@ -24,6 +35,25 @@ namespace RLDemo.BusinessObjects
             set
             {
                 _person.Name = value;
+            }
+        }
+
+        public void AddResult(string discipline_, decimal mark_)
+        {
+            var res = new DataLayer.Result() { 
+                People = this._person,
+                Discipline = discipline_,
+                 Mark = mark_
+            };
+
+            _person.Results.Add(res);
+
+            App.Controller.CommitChanges();
+
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs("Results"));
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs("Name"));
             }
         }
 
@@ -39,5 +69,7 @@ namespace RLDemo.BusinessObjects
         {
             return Name;
         }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }

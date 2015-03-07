@@ -25,6 +25,13 @@ namespace RLDemo
             InitializeComponent();
 
             this.DataContext = App.Controller;
+
+            this.Closing += MainWindow_Closing;
+        }
+
+        void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            App.Controller.CommitChanges();
         }
 
         private void results_click(object sender, RoutedEventArgs e)

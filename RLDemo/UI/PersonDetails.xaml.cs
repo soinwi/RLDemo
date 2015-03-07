@@ -44,6 +44,15 @@ namespace RLDemo.UI
             }
         }
 
+        private void addresult_click(object sender, RoutedEventArgs e)
+        {
+            ResultDialog rd = new ResultDialog();
+            if(rd.ShowDialog() != false)
+            {
+                Person.AddResult(rd.Discipline, rd.Result);
+            }
+        }
+
 
     }
 }
