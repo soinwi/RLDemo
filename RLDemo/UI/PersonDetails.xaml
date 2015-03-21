@@ -1,0 +1,17 @@
+﻿<Window x:Class="RLDemo.UI.PersonDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PersonDetails" Height="300" Width="300"
+        Name="PersonDetailsDialog">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding ElementName=PersonDetailsDialog, Path=Person.Name}"></TextBlock>
+        <ListBox Name="_resultsBox" Grid.Row="1" ItemsSource="{Binding ElementName=PersonDetailsDialog, Path=Person.Results}" />
+        
+        <Button Grid.Row="2" Content="Resultat hinzufügen" Click="addresult_click" />
+    </Grid>
+</Window>

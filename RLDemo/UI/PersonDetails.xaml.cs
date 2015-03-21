@@ -25,7 +25,10 @@ namespace RLDemo.UI
         {
             Person = person_;
             InitializeComponent();
+
+            //_resultsBox.ItemsSource = Person.Results;
         }
+
 
         public static readonly DependencyProperty PersonProperty = DependencyProperty.Register(
             "Person",
